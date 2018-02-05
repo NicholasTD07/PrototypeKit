@@ -1,7 +1,9 @@
-* README
+* PrototypeKit
+
+A skeleton project to do fast iOS prototype
 
 ** Commands
 
 #+BEGIN_SRC sh :results output
-  carthage update --platform iOS --cache-builds
+  carthage update --platform iOS --cache-builds --verbose
 #+END_SRC
