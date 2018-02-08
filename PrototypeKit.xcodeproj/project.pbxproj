@@ -14,6 +14,8 @@
 		6C0DB6C620291515003F2971 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0DB6C520291514003F2971 /* SnapKit.framework */; };
 		6C0DB6C720291515003F2971 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0DB6C520291514003F2971 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6C1829E5202915C60091BEA3 /* imports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1829E4202915C60091BEA3 /* imports.swift */; };
+		6CD53C69202C014C00929FC6 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD53C68202C014B00929FC6 /* Kingfisher.framework */; };
+		6CD53C6A202C014C00929FC6 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD53C68202C014B00929FC6 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,6 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				6CD53C6A202C014C00929FC6 /* Kingfisher.framework in Embed Frameworks */,
 				6C0DB6C720291515003F2971 /* SnapKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -39,6 +42,7 @@
 		6C0DB6BF202909E7003F2971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C0DB6C520291514003F2971 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		6C1829E4202915C60091BEA3 /* imports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imports.swift; sourceTree = "<group>"; };
+		6CD53C68202C014B00929FC6 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CD53C69202C014C00929FC6 /* Kingfisher.framework in Frameworks */,
 				6C0DB6C620291515003F2971 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +91,7 @@
 		6C0DB6CA2029153B003F2971 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CD53C68202C014B00929FC6 /* Kingfisher.framework */,
 				6C0DB6C520291514003F2971 /* SnapKit.framework */,
 			);
 			name = Frameworks;
