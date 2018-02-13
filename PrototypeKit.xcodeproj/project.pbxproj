@@ -16,6 +16,7 @@
 		6C1829E5202915C60091BEA3 /* imports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1829E4202915C60091BEA3 /* imports.swift */; };
 		6C558E95202D549E00057B0D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C558E94202D549D00057B0D /* Result.framework */; };
 		6C558E96202D549E00057B0D /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C558E94202D549D00057B0D /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6C6AB8F420326C000014B5E3 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6AB8F320326C000014B5E3 /* Utils.swift */; };
 		6CD53C69202C014C00929FC6 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD53C68202C014B00929FC6 /* Kingfisher.framework */; };
 		6CD53C6A202C014C00929FC6 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD53C68202C014B00929FC6 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		6C0DB6C520291514003F2971 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		6C1829E4202915C60091BEA3 /* imports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imports.swift; sourceTree = "<group>"; };
 		6C558E94202D549D00057B0D /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		6C6AB8F320326C000014B5E3 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		6CD53C68202C014B00929FC6 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 				6C0DB6BA202909E7003F2971 /* Assets.xcassets */,
 				6C0DB6BC202909E7003F2971 /* LaunchScreen.storyboard */,
 				6C0DB6BF202909E7003F2971 /* Info.plist */,
+				6C6AB8F320326C000014B5E3 /* Utils.swift */,
 			);
 			path = PrototypeKit;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				6C0DB6B6202909E7003F2971 /* ViewController.swift in Sources */,
 				6C0DB6B4202909E7003F2971 /* AppDelegate.swift in Sources */,
 				6C1829E5202915C60091BEA3 /* imports.swift in Sources */,
+				6C6AB8F420326C000014B5E3 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
