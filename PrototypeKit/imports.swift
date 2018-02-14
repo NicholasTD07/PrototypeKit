@@ -10,3 +10,4 @@
 @_exported import SnapKit
 @_exported import Kingfisher
 @_exported import Result
+@_exported import Alamofire

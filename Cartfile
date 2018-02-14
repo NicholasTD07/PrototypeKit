@@ -1,3 +1,4 @@
 github "SnapKit/SnapKit" ~> 4.0.0
 github "onevcat/Kingfisher" ~> 4.0
 github "antitypical/Result" ~> 3.0.0
+github "Alamofire/Alamofire" ~> 4.5
