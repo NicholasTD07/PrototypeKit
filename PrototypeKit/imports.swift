@@ -8,6 +8,5 @@
 
 @_exported import UIKit
 @_exported import SnapKit
-@_exported import Kingfisher
+@_exported import Pulley
 @_exported import Result
-@_exported import Alamofire
