@@ -11,7 +11,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .gray
-        }
+    }
 }
 
 private extension ViewController {

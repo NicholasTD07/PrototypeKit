@@ -14,13 +14,9 @@
 		6C0DB6C620291515003F2971 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0DB6C520291514003F2971 /* SnapKit.framework */; };
 		6C0DB6C720291515003F2971 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0DB6C520291514003F2971 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6C1829E5202915C60091BEA3 /* imports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1829E4202915C60091BEA3 /* imports.swift */; };
-		6C2093B52033BBB900A8C760 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2093B42033BBB900A8C760 /* Alamofire.framework */; };
-		6C2093B62033BBB900A8C760 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2093B42033BBB900A8C760 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6C558E95202D549E00057B0D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C558E94202D549D00057B0D /* Result.framework */; };
 		6C558E96202D549E00057B0D /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C558E94202D549D00057B0D /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6C6AB8F420326C000014B5E3 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6AB8F320326C000014B5E3 /* Utils.swift */; };
-		6CD53C69202C014C00929FC6 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD53C68202C014B00929FC6 /* Kingfisher.framework */; };
-		6CD53C6A202C014C00929FC6 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD53C68202C014B00929FC6 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6CF1C55C207D732D0046716D /* PrototypeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF1C55B207D732D0046716D /* PrototypeKitTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,9 +28,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				6C558E96202D549E00057B0D /* Result.framework in Embed Frameworks */,
-				6CD53C6A202C014C00929FC6 /* Kingfisher.framework in Embed Frameworks */,
 				6C0DB6C720291515003F2971 /* SnapKit.framework in Embed Frameworks */,
-				6C2093B62033BBB900A8C760 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,11 +44,9 @@
 		6C0DB6BF202909E7003F2971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C0DB6C520291514003F2971 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		6C1829E4202915C60091BEA3 /* imports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imports.swift; sourceTree = "<group>"; };
-		6C2093B42033BBB900A8C760 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		6C381D4C2089C407004E0A6A /* PrototypeKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrototypeKit-Bridging-Header.h"; sourceTree = "<group>"; };
 		6C558E94202D549D00057B0D /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		6C6AB8F320326C000014B5E3 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		6CD53C68202C014B00929FC6 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		6CF1C559207D732D0046716D /* PrototypeKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrototypeKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CF1C55B207D732D0046716D /* PrototypeKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeKitTests.swift; sourceTree = "<group>"; };
 		6CF1C55D207D732D0046716D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,9 +58,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C558E95202D549E00057B0D /* Result.framework in Frameworks */,
-				6CD53C69202C014C00929FC6 /* Kingfisher.framework in Frameworks */,
 				6C0DB6C620291515003F2971 /* SnapKit.framework in Frameworks */,
-				6C2093B52033BBB900A8C760 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,9 +109,7 @@
 		6C0DB6CA2029153B003F2971 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6C2093B42033BBB900A8C760 /* Alamofire.framework */,
 				6C558E94202D549D00057B0D /* Result.framework */,
-				6CD53C68202C014B00929FC6 /* Kingfisher.framework */,
 				6C0DB6C520291514003F2971 /* SnapKit.framework */,
 			);
 			name = Frameworks;
@@ -181,7 +169,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = nickTD;
 				TargetAttributes = {
 					6C0DB6AF202909E7003F2971 = {
@@ -281,6 +269,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -288,6 +277,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -338,6 +328,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -345,6 +336,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
