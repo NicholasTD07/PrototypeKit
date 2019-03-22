@@ -11,7 +11,37 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .gray
+
+        let red = UIViewController()
+        red.view.backgroundColor = .red
+
+        let green = UIViewController()
+        green.view.backgroundColor = .green
+
+        let blue = UIViewController()
+        blue.view.backgroundColor = .blue
+
+        green.addChildViewController(blue)
+        blue.willMove(toParentViewController: green)
+        green.view.addSubview(blue.view)
+        blue.didMove(toParentViewController: green)
+
+        blue.view.snp.makeConstraints { make in
+            make.height.equalToSuperview().dividedBy(2)
+            make.left.bottom.right.equalToSuperview()
         }
+
+        let pulley = PulleyViewController(contentViewController: red, drawerViewController: green)
+
+        self.addChildViewController(pulley)
+        pulley.willMove(toParentViewController: self)
+        view.addSubview(pulley.view)
+        pulley.didMove(toParentViewController: self)
+
+        pulley.view.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
 }
 
 private extension ViewController {
