@@ -1,4 +1,5 @@
 /Carthage/
+.DS_Store
 
 ## Xcode
 *.pbxuser
