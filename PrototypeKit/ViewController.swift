@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 private extension ViewController {
     private func verifySnapKitInstallation() {
         let subview = UIView()
-        
+
         view.addSubview(subview)
         subview.snp.makeConstraints { make in
         }
