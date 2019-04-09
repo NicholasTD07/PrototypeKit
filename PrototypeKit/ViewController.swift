@@ -6,44 +6,77 @@
 //  Copyright © 2018 nickTD. All rights reserved.
 //
 
-private class ShadowView: UIView {
+class RoundedShadowView: UIView {
+    // self is transparent and having shadows
+    // self.contentView has concrete colors and rounded corners
 
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
+    private let contentView = UIView()
 
-        func makeShadow() {
-            let context = UIGraphicsGetCurrentContext()!
-            let rectanglePath = UIBezierPath.init(
-                roundedRect: rect,
-                byRoundingCorners: [.topLeft, .topRight],
-                cornerRadii: CGSize(width: 16, height: 16)
-            )
-            rectanglePath.close()
-            context.saveGState()
-            context.setShadow(
-                offset: CGSize(width: 0, height: 5),
-                blur: 10,
-                color: UIColor.white.cgColor
-            )
-            UIColor.white.setFill()
-            rectanglePath.fill()
-            context.restoreGState()
+    init() {
+        super.init(frame: .zero)
+
+        setUpViews()
+    }
+
+    private func setUpViews() {
+        backgroundColor = .clear
+        contentView.backgroundColor = .white
+
+        addShadow(to: self)
+
+        addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
+    }
 
-        makeShadow()
+    private func addShadow(to view: UIView) {
+        view.layer.shadowColor = UIColor.white.cgColor
+        view.layer.shadowRadius = 10
+        view.layer.shadowOffset = CGSize(width: 0, height: -5)
+        view.layer.shadowOpacity = 1
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        let rect = self.contentView.bounds
+        let maskPath = UIBezierPath.init(
+            roundedRect: rect,
+            byRoundingCorners: [.topLeft, .topRight],
+            cornerRadii: CGSize(width: 16, height: 16)
+        )
+
+        let maskLayer = CAShapeLayer()
+
+        maskLayer.frame = rect
+        maskLayer.path = maskPath.cgPath
+
+        contentView.layer.mask = maskLayer
+    }
+
+    @available(*, unavailable)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
 class ViewController: UIViewController {
-    private let contentView = ShadowView()
+    private let contentView = RoundedShadowView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = .gray
 
-//        setUpLayers()
+        view.addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.height.equalTo(100)
+        }
+    }
 
+    private func attempt() {
         contentView.backgroundColor = .white
 
         view.addSubview(contentView)
@@ -52,7 +85,7 @@ class ViewController: UIViewController {
             make.width.height.equalTo(100)
         }
 
-//        addShadow(to: contentView)
+        addShadow(to: contentView)
     }
 
     private func addShadow(to view: UIView) {
@@ -77,7 +110,7 @@ class ViewController: UIViewController {
         maskLayer.frame = rect
         maskLayer.path = maskPath.cgPath
 
-        self.contentView.layer.mask = maskLayer
+//        self.contentView.layer.mask = maskLayer
     }
 
     private func setUpLayers() {
