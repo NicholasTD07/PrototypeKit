@@ -17,45 +17,41 @@ class ViewController: UIViewController {
 
     private func setUpLayers() {
         func circleView(diameter: CGFloat) -> UIView {
-            let circle = UIView(frame:
-                CGRect(
-                    origin: .zero,
-                    size: CGSize(
-                        width: diameter,
-                        height: diameter
-                    )
-                )
-            )
-
+            let circle = UIView(frame: .zero)
             circle.backgroundColor = .white
             circle.layer.cornerRadius = diameter / 2
             circle.layer.masksToBounds = true
 
             return circle
         }
-        func shadowLayer() -> CALayer {
-            let shadow = CALayer()
+        func shadowView() -> UIView {
+            let view = UIView()
 
-            shadow.shadowColor = UIColor.white.cgColor
-            shadow.shadowRadius = 10
-            shadow.shadowOffset = CGSize(width: 0, height: 5)
-            shadow.shadowOpacity = 1
+            view.layer.shadowColor = UIColor.white.cgColor
+            view.layer.shadowRadius = 10
+            view.layer.shadowOffset = CGSize(width: 0, height: 5)
+            view.layer.shadowOpacity = 1
 
-            return shadow
+            return view
         }
 
         let diameter: CGFloat = 100
         let circle = circleView(diameter: diameter)
 
-        let shadow = shadowLayer()
+        let shadow = shadowView()
 
-        circle.center = view.center
-//        view.addSubview(circle)
+        shadow.addSubview(circle)
 
-        shadow.addSublayer(circle.layer)
+        circle.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
 
-        view.layer.addSublayer(shadow)
+        view.addSubview(shadow)
 
+        shadow.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.height.equalTo(diameter)
+        }
     }
 }
 
