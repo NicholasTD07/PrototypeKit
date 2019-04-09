@@ -12,15 +12,33 @@ class RoundedShadowView: UIView {
 
     private let contentView = UIView()
 
-    init() {
+    private let roundingCorners: UIRectCorner
+    private let cornerRadii: CGSize
+
+    override var backgroundColor: UIColor? {
+        get {
+            return self.contentView.backgroundColor
+        }
+        set {
+            self.contentView.backgroundColor = newValue
+        }
+    }
+
+    init(
+        byRoundingCorners roundingCorners: UIRectCorner,
+        cornerRadii: CGSize
+    ) {
+        self.roundingCorners = roundingCorners
+        self.cornerRadii = cornerRadii
+
         super.init(frame: .zero)
 
         setUpViews()
     }
 
     private func setUpViews() {
-        backgroundColor = .clear
-        contentView.backgroundColor = .white
+        self.backgroundColor = .clear
+        self.contentView.backgroundColor = .white
 
         addShadow(to: self)
 
@@ -41,10 +59,10 @@ class RoundedShadowView: UIView {
         super.layoutSubviews()
 
         let rect = self.contentView.bounds
-        let maskPath = UIBezierPath.init(
+        let maskPath = UIBezierPath(
             roundedRect: rect,
-            byRoundingCorners: [.topLeft, .topRight],
-            cornerRadii: CGSize(width: 16, height: 16)
+            byRoundingCorners: self.roundingCorners,
+            cornerRadii: self.cornerRadii
         )
 
         let maskLayer = CAShapeLayer()
@@ -62,7 +80,10 @@ class RoundedShadowView: UIView {
 }
 
 class ViewController: UIViewController {
-    private let contentView = RoundedShadowView()
+    private let contentView = RoundedShadowView(
+        byRoundingCorners: [.topLeft, .topRight],
+        cornerRadii: CGSize(width: 16, height: 16)
+    )
 
     override func viewDidLoad() {
         super.viewDidLoad()
