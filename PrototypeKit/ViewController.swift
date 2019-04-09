@@ -6,14 +6,15 @@
 //  Copyright © 2018 nickTD. All rights reserved.
 //
 
+/// RoundedShadowView itself is transparent and having the shadows.
+/// The `contentView` will have concrete colors and rounded corners.
+/// Use the `contentView` to add subviews.
 class RoundedShadowView: UIView {
-    // self is transparent and having shadows
-    // self.contentView has concrete colors and rounded corners
-
-    private let contentView = UIView()
+    let contentView = UIView()
 
     private let roundingCorners: UIRectCorner
     private let cornerRadii: CGSize
+    private let shadow: Shadow
 
     override var backgroundColor: UIColor? {
         get {
@@ -24,12 +25,21 @@ class RoundedShadowView: UIView {
         }
     }
 
+    struct Shadow {
+        let color: UIColor
+        let radius: CGFloat
+        let offset: CGSize
+        let opacity: Float
+    }
+
     init(
         byRoundingCorners roundingCorners: UIRectCorner,
-        cornerRadii: CGSize
+        cornerRadii: CGSize,
+        shadow: Shadow
     ) {
         self.roundingCorners = roundingCorners
         self.cornerRadii = cornerRadii
+        self.shadow = shadow
 
         super.init(frame: .zero)
 
@@ -38,21 +48,19 @@ class RoundedShadowView: UIView {
 
     private func setUpViews() {
         self.backgroundColor = .clear
-        self.contentView.backgroundColor = .white
+        self.addShadow(to: self)
 
-        addShadow(to: self)
-
-        addSubview(contentView)
-        contentView.snp.makeConstraints { make in
+        self.addSubview(contentView)
+        self.contentView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
 
     private func addShadow(to view: UIView) {
-        view.layer.shadowColor = UIColor.white.cgColor
-        view.layer.shadowRadius = 10
-        view.layer.shadowOffset = CGSize(width: 0, height: -5)
-        view.layer.shadowOpacity = 1
+        view.layer.shadowColor = self.shadow.color.cgColor
+        view.layer.shadowRadius = self.shadow.radius
+        view.layer.shadowOffset = self.shadow.offset
+        view.layer.shadowOpacity = self.shadow.opacity
     }
 
     override func layoutSubviews() {
@@ -70,7 +78,7 @@ class RoundedShadowView: UIView {
         maskLayer.frame = rect
         maskLayer.path = maskPath.cgPath
 
-        contentView.layer.mask = maskLayer
+        self.contentView.layer.mask = maskLayer
     }
 
     @available(*, unavailable)
@@ -82,7 +90,13 @@ class RoundedShadowView: UIView {
 class ViewController: UIViewController {
     private let contentView = RoundedShadowView(
         byRoundingCorners: [.topLeft, .topRight],
-        cornerRadii: CGSize(width: 16, height: 16)
+        cornerRadii: CGSize(width: 16, height: 16),
+        shadow: .init(
+            color: .white,
+            radius: 10,
+            offset: CGSize(width: 0, height: -5),
+            opacity: 1
+        )
     )
 
     override func viewDidLoad() {
@@ -90,6 +104,7 @@ class ViewController: UIViewController {
 
         self.view.backgroundColor = .gray
 
+        self.contentView.backgroundColor = .white
         view.addSubview(contentView)
         contentView.snp.makeConstraints { make in
             make.center.equalToSuperview()
