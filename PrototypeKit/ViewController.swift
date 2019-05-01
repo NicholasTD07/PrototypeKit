@@ -44,6 +44,15 @@ class ViewController: UIViewController {
             ov
         ]
         addChild(stackController, in: view)
+//        stackController.willMove(toParentViewController: self)
+//        self.view.addSubview(stackController.view)
+//        stackController.didMove(toParentViewController: self)
+        stackController.view.snp.removeConstraints()
+        stackController.view.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            make.left.right.bottom.equalToSuperview()
+        }
+
     }
 }
 
@@ -64,7 +73,7 @@ extension ViewController: OverlayContainerViewControllerDelegate {
         ) -> CGFloat {
         switch OverlayNotch.allCases[index] {
         case .maximum:
-            return availableSpace * 3 / 4
+            return availableSpace
         case .medium:
             return availableSpace / 2
         case .minimum:
